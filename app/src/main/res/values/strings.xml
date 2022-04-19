@@ -7,4 +7,8 @@
     <string name="text_radio_cat">고양이</string>
     <string name="text_radio_rabbit">토끼</string>
     <string name="text_radio_done">선택 완료</string>
+    <string name="text_dog" />
+    <string name="text_cat" />
+    <string name="text_rabbit" />
+    <string name="btn_done" />
 </resources>
