@@ -10,10 +10,11 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
     RadioGroup rg;
-    CheckBox checkStart;
+    Switch checkStart;
     ImageView imgv;
     LinearLayout LinearSub;
 
@@ -27,14 +28,14 @@ public class MainActivity extends AppCompatActivity {
         rg= findViewById(R.id.rg);
         checkStart=findViewById(R.id.check_start);
         imgv=findViewById(R.id.imgv);
-        Button btnDone=findViewById(R.id.btn_done);
-        btnDone.setOnClickListener(btnListener);
+        rg.setOnCheckedChangeListener(rgListener);
         checkStart.setOnCheckedChangeListener(checkListener);
     }
-    View.OnClickListener btnListener = new View.OnClickListener(){
+
+    RadioGroup.OnCheckedChangeListener rgListener = new RadioGroup.OnCheckedChangeListener() {
         @Override
-        public void onClick(View view){
-            switch(rg.getCheckedRadioButtonId()){
+        public void onCheckedChanged(RadioGroup radioGroup, int selectedId) {
+            switch(selectedId){
                 case R.id.rb_dog:
                     imgv.setImageResource(R.drawable.dog);
                     break;
